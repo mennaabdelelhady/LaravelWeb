@@ -15,7 +15,16 @@ class IsMohamedUser
      */
     public function handle(Request $request, Closure $next): Response
     {
-        dd("hello");
+        $name= $request->route('name');
+
+        //if($name != 'mohamed'){
+            //return response()->json(["error"=>["Not Authenticated"]],401);
+        //}
+
+        return $next($request);
+
+
+        //dd("hello from the middleware");
         //return "hello from the middleware";
         //return $next($request);
     }
